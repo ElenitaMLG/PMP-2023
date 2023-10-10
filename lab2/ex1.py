@@ -12,10 +12,10 @@ probabilitate_primul_mecanic = 0.4
 # nr de valori generate
 numar_valori = 10000
 
-# generarea timpilor de servire folosind distribuția exponentiala
+# generarea timpilor de servire folosind distributia exponentiala
 timp_servire = np.random.choice([1 / λ1, 1 / λ2], size=numar_valori, p=[probabilitate_primul_mecanic, 1 - probabilitate_primul_mecanic])
 
-# calcularea mediei și deviatie standard
+# calcularea mediei si deviatie standard
 media_x = np.mean(timp_servire)
 deviatia_standard_x = np.std(timp_servire)
 
@@ -32,8 +32,8 @@ pdf_combinat = probabilitate_primul_mecanic * pdf_primul_mecanic + (1 - probabil
 plt.figure(figsize=(10, 6))
 plt.plot(x, pdf_primul_mecanic, label='Primul Mecanic')
 plt.plot(x, pdf_al_doilea_mecanic, label='Al Doilea Mecanic')
-plt.plot(x, pdf_combinat, label='Combinat (Probabilitate ponderată)')
-plt.title('Densitatea distribuției lui X')
+plt.plot(x, pdf_combinat, label='Combinat (Probabilitate ponderata)')
+plt.title('Densitatea distributiei lui X')
 plt.xlabel('Timp de servire (ore)')
 plt.ylabel('Densitate')
 plt.legend()
