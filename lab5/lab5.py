@@ -24,7 +24,7 @@ with pm.Model() as traffic_model:
     idx_interval_4 = (df['minut'] >= 16 * 60) & (df['minut'] < 19 * 60)
     idx_interval_5 = (df['minut'] >= 19 * 60) & (df['minut'] <= 24 * 60)
 
-    # Definirea observațiilor pentru fiecare interval de timp
+    # Definirea observatiilor pentru fiecare interval de timp
     obs_1 = pm.Poisson('obs_1', mu=lambda_1, observed=df['nr. masini'][idx_interval_1])
     obs_2 = pm.Poisson('obs_2', mu=lambda_2, observed=df['nr. masini'][idx_interval_2])
     obs_3 = pm.Poisson('obs_3', mu=lambda_3, observed=df['nr. masini'][idx_interval_3])
